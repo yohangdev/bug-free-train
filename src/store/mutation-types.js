@@ -1,0 +1,2 @@
+export const POSTS_LIST_INIT = 'POSTS_LIST_INIT'
+export const POSTS_LIST_LOADED = 'POSTS_LIST_LOADED'
