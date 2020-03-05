@@ -21,12 +21,13 @@ export default {
 
   data () {
     return {
-      currentPage: 1
+      //
     }
   },
 
   computed: mapGetters({
-    items: 'posts-list/items'
+    items: 'posts-list/items',
+    currentPage: 'posts-list/currentPage'
   }),
 
   mounted () {
@@ -44,7 +45,7 @@ export default {
         const bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight
 
         if (bottomOfWindow) {
-          this.currentPage++
+          this.$store.commit('posts-list/POSTS_LIST_INCREMENT_PAGE')
           this.fetchItems()
         }
       }

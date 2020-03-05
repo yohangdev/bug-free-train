@@ -4,13 +4,15 @@ import http from '@/http'
 // state
 export const state = {
   loading: true,
-  items: []
+  items: [],
+  currentPage: 1
 }
 
 // getters
 export const getters = {
   loading: state => state.loading,
-  items: state => state.items
+  items: state => state.items,
+  currentPage: state => state.currentPage
 }
 
 // mutations
@@ -25,6 +27,10 @@ export const mutations = {
 
     state.items = merged
     state.loading = false
+  },
+
+  [types.POSTS_LIST_INCREMENT_PAGE] (state) {
+    state.currentPage++
   }
 }
 
